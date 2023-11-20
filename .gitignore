@@ -45,3 +45,4 @@ crash.log
 credentials.json
 .pre-commit-config.yaml
 variables.tfvars.json
+.terraform.lock.hcl

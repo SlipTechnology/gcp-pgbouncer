@@ -3,6 +3,11 @@ locals {
   public_ip  = length(google_compute_instance.pgbouncer.network_interface[0].access_config) > 0 ? google_compute_instance.pgbouncer.network_interface[0].access_config[0].nat_ip : null
 }
 
+provider "google" {
+  project = "slip-dev1"
+  region = "europe-west2"
+}
+
 /* Instance Configuration --------------------------------------------------- */
 
 module "pgbouncer_cloud_init" {
