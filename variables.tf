@@ -88,7 +88,7 @@ variable "pgbouncer_image_tag" {
 variable "subnetwork" {
   description = "The name or self-link of the subnet where PgBouncer will be created. Either network or subnetwork must be provided."
   type        = string
-  default     = null
+  default     = "default"
 }
 
 variable "public_ip_address" {
