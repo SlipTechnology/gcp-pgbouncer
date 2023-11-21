@@ -10,7 +10,7 @@ provider "google" {
 
 terraform {
   backend "gcs" {
-    bucket  = "pgbpuncer-bucket"
+    bucket  = "pgbouncer-bucket"
     prefix  = "terraform/state"
   }
 }
