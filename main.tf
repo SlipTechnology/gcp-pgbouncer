@@ -8,6 +8,14 @@ provider "google" {
   region = "europe-west2"
 }
 
+terraform {
+  backend "gcs" {
+    bucket  = "pgbpuncer-bucket"
+    prefix  = "terraform/state" # Optional: Prefix for state file names
+    project = "slip-dev1"
+  }
+}
+
 /* Instance Configuration --------------------------------------------------- */
 
 module "pgbouncer_cloud_init" {
