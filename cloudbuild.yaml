@@ -26,17 +26,5 @@ steps:
         export TF_VAR_project=slip-dev1
         export TF_VAR_zone=europe-west2-a     
         terraform apply --auto-approve
-  - id: 'terraform destroy'
-    name: 'hashicorp/terraform:1.0.0'
-    entrypoint: 'sh'
-    args:
-      - '-c'
-      - |
-        export TF_VAR_name=pgbouncer
-        export TF_VAR_database_host=34.105.146.128 
-        export TF_VAR_port=6432
-        export TF_VAR_project=slip-dev1
-        export TF_VAR_zone=europe-west2-a     
-        terraform destroy
 options:
   logging: CLOUD_LOGGING_ONLY
