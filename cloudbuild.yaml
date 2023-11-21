@@ -13,8 +13,10 @@ steps:
         export TF_VAR_port=6432
         export TF_VAR_project=slip-dev1
         export TF_VAR_zone=europe-west2-a
-        export TF_VAR_users=[{"name":admin,"password":${_ADMIN_PASSWORD}}]
+        export TF_VAR_users='[{"name":"admin","password":"'"_$ADMIN_PASSWORD"'"}]'
         terraform plan
+    env:
+      - '_ADMIN_PASSWORD=$$ADMIN_PASSWORD'
   - id: 'terraform apply'
     name: 'hashicorp/terraform:1.0.0'
     entrypoint: 'sh'
