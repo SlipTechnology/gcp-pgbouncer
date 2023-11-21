@@ -5,7 +5,12 @@ steps:
     script: terraform init
   - id: 'terraform plan'
     name: 'hashicorp/terraform:1.0.0'
-    script: terraform plan -var-file=variables.tfvars.json
+    script: terraform plan
+    secretEnv: ['TF_VAR_dbPassword']
+    availableSecrets:
+      secretManager:
+        - versionName: projects/76175828069/secrets/PGBouncer_dbPassword/versions/latest
+          env: 'TF_VAR_dbPassword'
   - id: 'terraform apply'
     name: 'hashicorp/terraform:1.0.0'
     script: terraform apply --auto-approve
