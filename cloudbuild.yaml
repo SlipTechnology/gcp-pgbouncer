@@ -9,6 +9,7 @@ steps:
       - '-c'
       - |
         export TF_VAR_dbPassword=$(gcloud secrets versions access latest --secret="PGBouncer_dbPassword")
+        export TF_VAR_name=pgbouncer
         terraform plan
 
   - id: 'terraform apply'
