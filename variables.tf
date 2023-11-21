@@ -31,6 +31,10 @@ variable "users" {
                   name = string,
                   password = string
                 }))
+  default = [ {
+    name : "admin",
+    password = "password"
+  } ]
 }
 variable "auth_user" {
   description = "Any user not specified in `users` will be queried through the `auth_query` query from `pg_shadow` in the database, using `auth_user`. The user for `auth_user` must be included in `users`."
