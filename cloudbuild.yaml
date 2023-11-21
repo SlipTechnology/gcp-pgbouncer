@@ -9,7 +9,7 @@ steps:
       - '-c'
       - |
         export TF_VAR_name=pgbouncer
-        export TF_VAR_database_host=34.105.146.128 
+        export TF_VAR_database_host=10.11.64.3 
         export TF_VAR_port=6432
         export TF_VAR_project=slip-dev1
         export TF_VAR_zone=europe-west2-a
@@ -22,7 +22,7 @@ steps:
       - '-c'
       - |
         export TF_VAR_name=pgbouncer
-        export TF_VAR_database_host=34.105.146.128 
+        export TF_VAR_database_host=10.11.64.3
         export TF_VAR_port=6432
         export TF_VAR_project=slip-dev1
         export TF_VAR_zone=europe-west2-a
