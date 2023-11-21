@@ -25,7 +25,7 @@ steps:
         export TF_VAR_port=6432
         export TF_VAR_project=slip-dev1
         export TF_VAR_zone=europe-west2     
-        terraform apply --auto-aprove
+        terraform apply --auto-approve
   - id: 'terraform destroy'
     name: 'hashicorp/terraform:1.0.0'
     script: terraform destroy
