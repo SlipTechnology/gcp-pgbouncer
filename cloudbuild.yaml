@@ -30,4 +30,4 @@ steps:
     name: 'hashicorp/terraform:1.0.0'
     script: terraform destroy
 options:
-  logging: LEGACY
+  logging: GCS_ONLY
