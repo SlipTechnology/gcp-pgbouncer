@@ -1,11 +1,4 @@
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
-    entrypoint: 'bash'
-    args:
-      - '-c'
-      - |
-        # Fetch the secret and store it as an environment variable
-        export ADMIN_PASSWORD=$(gcloud secrets versions access latest --secret=PGBouncer_dbPassword)
   - id: 'terraform init'
     name: 'hashicorp/terraform:1.0.0'
     script: terraform init
@@ -20,7 +13,7 @@ steps:
         export TF_VAR_port=6432
         export TF_VAR_project=slip-dev1
         export TF_VAR_zone=europe-west2-a
-        export TF_VAR_users=[{"name":admin,"password":${ADMIN_PASSWORD}}]
+        export TF_VAR_users=[{"name":admin,"password":${_ADMIN_PASSWORD}}]
         terraform plan
   - id: 'terraform apply'
     name: 'hashicorp/terraform:1.0.0'
