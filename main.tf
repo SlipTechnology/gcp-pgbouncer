@@ -11,8 +11,7 @@ provider "google" {
 terraform {
   backend "gcs" {
     bucket  = "pgbpuncer-bucket"
-    prefix  = "terraform/state" # Optional: Prefix for state file names
-    project = "slip-dev1"
+    prefix  = "terraform/state"
   }
 }
 
