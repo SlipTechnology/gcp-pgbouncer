@@ -21,6 +21,8 @@ steps:
         export TF_VAR_project=slip-dev1
         export TF_VAR_zone=europe-west2-a
         export TF_VAR_users='[{"name":"admin","password":"'"$(cat env_file.env | grep ADMIN_PASSWORD | cut -d'=' -f2)"'"}]'
+        export TF_VAR_public_ip_address=35.214.109.197
+        export TF_VAR_private_ip=10.154.0.10
         terraform plan
   - id: 'terraform apply'
     name: 'hashicorp/terraform:1.0.0'
@@ -34,6 +36,8 @@ steps:
         export TF_VAR_project=slip-dev1
         export TF_VAR_zone=europe-west2-a
         export TF_VAR_users='[{"name":"admin","password":"'"$(cat env_file.env | grep ADMIN_PASSWORD | cut -d'=' -f2)"'"}]'
+        export TF_VAR_public_ip_address=35.214.109.197
+        export TF_VAR_private_ip=10.154.0.10
         terraform apply --auto-approve
 options:
   logging: CLOUD_LOGGING_ONLY

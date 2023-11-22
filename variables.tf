@@ -93,6 +93,12 @@ variable "public_ip_address" {
   default     = null
 }
 
+variable "private_ip" {
+  description = "Private IP of the instance"
+  type = string
+  default = null
+}
+
 variable "machine_type" {
   description = "The machine type of PgBouncer instances."
   type        = string
