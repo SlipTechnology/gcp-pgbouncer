@@ -53,13 +53,13 @@ variable "pool_mode" {
 variable "default_pool_size" {
   description = "Maximum number of server connections to allow per user/database pair."
   type        = number
-  default     = 20
+  default     = 100
 }
 
 variable "max_client_connections" {
   description = "Maximum number of client connections allowed."
   type        = number
-  default     = 100
+  default     = 500
 }
 
 variable "max_db_connections" {
