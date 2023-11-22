@@ -99,6 +99,12 @@ variable "private_ip" {
   default = null
 }
 
+variable "network_tier" {
+  description = "the tier of the instance"
+  type = string
+  default = "STANDARD"
+}
+
 variable "machine_type" {
   description = "The machine type of PgBouncer instances."
   type        = string

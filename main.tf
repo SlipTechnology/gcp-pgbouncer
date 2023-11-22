@@ -73,6 +73,7 @@ resource "google_compute_instance" "pgbouncer" {
     dynamic "access_config" {
       for_each = var.disable_public_ip ? [] : [1]
       content {
+        network_tier = var.network_tier
         nat_ip = var.public_ip_address
       }
     }
