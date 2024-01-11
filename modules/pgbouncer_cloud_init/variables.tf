@@ -46,7 +46,7 @@ variable "default_pool_size" {
 variable "max_client_connections" {
   description = "Maximum number of client connections allowed."
   type        = number
-  default     = 100
+  default     = 95
 }
 
 variable "max_db_connections" {
