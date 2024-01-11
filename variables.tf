@@ -108,7 +108,7 @@ variable "network_tier" {
 variable "machine_type" {
   description = "The machine type of PgBouncer instances."
   type        = string
-  default     = "f1-micro"
+  default     = "g1-small"
 }
 
 variable "boot_image" {
